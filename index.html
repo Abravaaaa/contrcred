@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprovação Elite - Assinatura de Contrato</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+
+        .contract-box {
+            background-color: #ffffff;
+            color: #1e293b;
+            height: 550px;
+            overflow-y: scroll;
+            border: 1px solid #e2e8f0;
+            padding: 2.5rem;
+            line-height: 1.8;
+            font-size: 0.9rem;
+            border-radius: 0.5rem;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .contract-box h2 { 
+            font-weight: 800; 
+            margin-top: 2rem; 
+            border-bottom: 2px solid #cbd5e1; 
+            padding-bottom: 0.5rem;
+            color: #0f172a;
+            text-transform: uppercase;
+            font-size: 1rem;
+        }
+        
+        .contract-box h3 { font-weight: 700; margin-top: 1.5rem; color: #334155; }
+        .contract-box p { margin-bottom: 1.2rem; text-align: justify; }
+        .highlight { font-weight: bold; color: #ef4444; }
+        .legal-ref { font-size: 0.8rem; color: #64748b; font-style: italic; }
+        
+        /* Custom Scrollbar */
+        .contract-box::-webkit-scrollbar { width: 10px; }
+        .contract-box::-webkit-scrollbar-track { background: #f8fafc; }
+        .contract-box::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 5px; border: 2px solid #f8fafc; }
+
+        .btn-approve {
+            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-approve:hover:not(:disabled) { 
+            transform: translateY(-3px); 
+            box-shadow: 0 10px 25px -5px rgba(34, 197, 94, 0.5); 
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4 bg-slate-950">
+
+    <div class="max-w-5xl w-full bg-slate-900 rounded-2xl shadow-2xl border border-slate-800 overflow-hidden">
+        <!-- Header Superior -->
+        <div class="p-6 border-b border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 bg-slate-900/50">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center shadow-lg shadow-green-500/20">
+                    <svg class="w-8 h-8 text-slate-900" fill="currentColor" viewBox="0 0 20 20"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path></svg>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-black text-white tracking-tighter">APROVAÇÃO <span class="text-green-500">ELITE</span></h1>
+                    <p class="text-slate-500 text-xs font-bold uppercase tracking-widest">Protocolo de Crédito Estruturado v4.0</p>
+                </div>
+            </div>
+            <div class="flex gap-4 items-center">
+                <div class="text-right">
+                    <p class="text-[10px] text-slate-500 uppercase">Status do Servidor</p>
+                    <p class="text-xs font-bold text-green-400 flex items-center gap-1">
+                        <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span> CONEXÃO SEGURA (SSL)
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="p-8">
+            <div class="mb-6">
+                <div class="flex justify-between items-end mb-2">
+                    <label class="text-sm font-bold text-slate-400 uppercase tracking-widest">Instrumento Particular de Mútuo Financeiro</label>
+                    <span id="scrollPercent" class="text-[10px] text-slate-500">Lido: 0%</span>
+                </div>
+                
+                <!-- CORPO DO CONTRATO EXPANDIDO -->
+                <div id="contractBody" class="contract-box" onscroll="checkScroll()">
+                    <div class="text-center mb-10">
+                        <h3 class="font-black text-2xl text-slate-900 uppercase underline decoration-green-500 decoration-4">CONTRATO DE ADESÃO AO CRÉDITO EMPRESARIAL - MODALIDADE BLACK</h3>
+                        <p class="text-xs text-slate-500 font-bold mt-2">CÓDIGO DE AUTENTICIDADE: AE-9548-BR-2026</p>
+                    </div>
+
+                    <p>Pelo presente instrumento particular, de um lado a <strong>LIBERO CAPITAL LTDA.</strong>, inscrita no CNPJ/ME sob o n.º 47.310.682/0001-99, com sede administrativa na Avenida Paulista, 1374, 4º andar, CEP 01310-100, São Paulo/SP, doravante denominada <strong>CREDORA</strong>, e do outro lado, a <strong>PESSOA JURÍDICA MUTUÁRIA</strong> devidamente identificada pelos metadados de acesso, resolvem pactuar as seguintes condições irrevogáveis:</p>
+
+                    <h2>CLÁUSULA 1ª – DO OBJETO E DISPONIBILIDADE</h2>
+                    <p>1.1. O objeto deste contrato é a abertura de limite de crédito empresarial rotativo no valor global de <strong>R$ 2.000.000,00 (dois milhões de reais)</strong>, para livre utilização em capital de giro.</p>
+                    <p>1.2. A liberação ocorre via <em>Smart-Transfer</em> instantâneo, dispensando assinaturas físicas ou reconhecimento de firma presencial, nos termos da <span class="legal-ref">MP nº 2.200-2/2001</span>.</p>
+
+                    <h2>CLÁUSULA 2ª – ENCARGOS FINANCEIROS E ANATOMOCISMO</h2>
+                    <p>2.1. <strong>TAXA DE JUROS:</strong> Fica estipulada a taxa de <span class="highlight">1,0% (um por cento) ao dia</span>, capitalizada conforme o regime de juros compostos horários. O MUTUÁRIO declara-se ciente da incidência de juros sobre juros (anatocismo), permitida em operações do Sistema Financeiro e Bancário conforme <span class="legal-ref">Súmula 539 do STJ</span>.</p>
+                    <p>2.2. <strong>TARIFA DE ESTRUTURAÇÃO (TAC):</strong> Será debitado o valor correspondente a 2% do montante bruto a título de montagem de dossiê digital no ato da primeira transferência.</p>
+                    <p>2.3. <strong>CORREÇÃO:</strong> Os saldos devedores serão corrigidos diariamente pela variação positiva do CDI acrescido de spread de risco de 5% ao mês.</p>
+
+                    <h2>CLÁUSULA 3ª – GARANTIAS REAIS E PENHOR DE FATURAMENTO</h2>
+                    <p>3.1. <strong>TRAVA BANCÁRIA:</strong> O MUTUÁRIO institui em favor da CREDORA o penhor sobre 100% de seus recebíveis presentes e futuros (cartão de crédito, PIX e boletos), autorizando a retenção de valores diretamente nas liquidantes (adquirentes).</p>
+                    <p>3.2. <strong>AVAL:</strong> Os sócios administradores respondem de forma solidária, ilimitada e subsidiária por todas as obrigações aqui contraídas, renunciando ao benefício de ordem previsto no <span class="legal-ref">Art. 827 do Código Civil</span>.</p>
+
+                    <h2>CLÁUSULA 4ª – MONITORAMENTO E COMPLIANCE DIGITAL</h2>
+                    <p>4.1. Para manutenção da taxa reduzida "Elite", o MUTUÁRIO autoriza a instalação de <em>scripts</em> de monitoramento financeiro em seus dispositivos, bem como o compartilhamento de geolocalização em tempo real (GPS).</p>
+                    <p>4.2. A CREDORA poderá realizar "Varreduras de Segurança" na lista de contatos do MUTUÁRIO para fins de <em>Credit Scoring</em> comportamental e validação de <em>Know Your Customer (KYC)</em>.</p>
+
+                    <h2>CLÁUSULA 5ª – EXECUÇÃO E MEDIDAS COERCITIVAS</h2>
+                    <p>5.1. O inadimplemento superior a 24 horas autoriza a CREDORA a realizar o bloqueio do CNPJ junto aos órgãos de classe e o protesto automático das Notas Promissórias vinculadas.</p>
+                    <p>5.2. <strong>NOTIFICAÇÃO EXTRAJUDICIAL:</strong> Fica o MUTUÁRIO ciente de que a cobrança poderá ser estendida aos seus contatos profissionais e familiares caso os canais principais de comunicação (WhatsApp/E-mail) sejam ignorados por mais de 12 horas.</p>
+
+                    <h2>CLÁUSULA 6ª – FORO E LEGISLAÇÃO</h2>
+                    <p>6.1. As partes elegem o Foro da Comarca de São Paulo/SP para dirimir quaisquer dúvidas, com renúncia expressa a qualquer outro.</p>
+                    
+                    <div class="mt-12 p-6 bg-slate-50 border-2 border-dashed border-slate-300 rounded-lg">
+                        <p class="text-center font-bold text-slate-800 mb-4">ASSINATURA DO MUTUÁRIO (DIGITAL)</p>
+                        <div class="flex justify-between items-center px-4 opacity-50">
+                            <div class="text-[10px]">AUTH_TOKEN: 0x9548...2338</div>
+                            <div class="text-[10px]">TIMESTAMP: 2026-02-08T22:15:00Z</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interação de Aceite -->
+            <div class="bg-slate-900/50 p-6 rounded-xl border border-slate-700">
+                <div class="flex items-center gap-4 mb-4">
+                    <input id="acceptCheck" type="checkbox" class="h-6 w-6 rounded border-slate-600 bg-slate-800 text-green-500 focus:ring-green-500 focus:ring-offset-slate-900 transition-all cursor-pointer" disabled>
+                    <label for="acceptCheck" class="text-sm text-slate-300 font-medium">
+                        Confirmo a veracidade dos dados e aceito as condições de juros compostos e garantias reais.
+                    </label>
+                </div>
+
+                <button id="submitBtn" class="btn-approve w-full py-5 rounded-xl font-black text-xl text-slate-950 uppercase tracking-tighter shadow-lg disabled:opacity-30 disabled:grayscale" disabled onclick="handleSign()">
+                    ASSINAR E LIBERAR CRÉDITO AGORA
+                </button>
+                
+                <p id="scrollWarning" class="text-center text-[10px] text-orange-400 font-bold mt-4 uppercase animate-pulse">
+                    ⚠️ Atenção: Role todo o contrato para habilitar a assinatura
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Sucesso -->
+    <div id="successModal" class="fixed inset-0 bg-slate-950/95 hidden items-center justify-center p-4 z-50 backdrop-blur-sm">
+        <div class="bg-slate-900 p-10 rounded-3xl max-w-md w-full text-center border border-green-500/50 shadow-[0_0_50px_-12px_rgba(34,197,94,0.5)]">
+            <div class="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg class="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+            </div>
+            <h3 class="text-3xl font-black text-white mb-2">CONTRATO ACEITO!</h3>
+            <p class="text-slate-400 mb-8">Protocolo enviado com sucesso para o setor de liberação. Redirecionando para o WhatsApp de suporte...</p>
+            <div class="animate-pulse text-green-500 font-bold text-sm">AGUARDE 3 SEGUNDOS...</div>
+        </div>
+    </div>
+
+    <script>
+        const contractBox = document.getElementById('contractBody');
+        const acceptCheck = document.getElementById('acceptCheck');
+        const submitBtn = document.getElementById('submitBtn');
+        const scrollWarning = document.getElementById('scrollWarning');
+        const scrollPercentLabel = document.getElementById('scrollPercent');
+
+        // Configuração do WhatsApp
+        const WHATSAPP_NUMBER = "5511954802338"; // Formato Internacional
+        const WHATSAPP_MESSAGE = "Olá! Acabei de assinar o contrato Aprovação Elite de R$ 2.000.000,00. Aguardo a liberação do PIX.";
+
+        function checkScroll() {
+            const scrollTotal = contractBox.scrollHeight - contractBox.clientHeight;
+            const currentScroll = (contractBox.scrollTop / scrollTotal) * 100;
+            
+            scrollPercentLabel.innerText = `Lido: ${Math.min(100, Math.round(currentScroll))}%`;
+
+            if (currentScroll > 98) {
+                acceptCheck.disabled = false;
+                scrollWarning.innerText = "✓ Documento validado para assinatura";
+                scrollWarning.classList.remove('text-orange-400', 'animate-pulse');
+                scrollWarning.classList.add('text-green-400');
+            }
+        }
+
+        acceptCheck.addEventListener('change', (e) => {
+            submitBtn.disabled = !e.target.checked;
+        });
+
+        function handleSign() {
+            // Desativa botão para evitar duplo clique
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `
+                <span class="flex items-center justify-center gap-2">
+                    <svg class="animate-spin h-6 w-6 text-slate-900" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    GERANDO CERTIFICADO DIGITAL...
+                </span>`;
+            
+            setTimeout(() => {
+                document.getElementById('successModal').style.display = 'flex';
+                
+                // Redirecionamento para WhatsApp após 3 segundos
+                setTimeout(() => {
+                    const encodedMsg = encodeURIComponent(WHATSAPP_MESSAGE);
+                    window.location.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMsg}`;
+                }, 3000);
+
+            }, 2500);
+        }
+
+        /* GUIA DE CUSTOMIZAÇÃO RÁPIDA:
+           ---------------------------
+           1. WHATSAPP: Altere a variável WHATSAPP_NUMBER no início do <script>.
+           2. MENSAGEM: Altere WHATSAPP_MESSAGE para o texto que você quer receber.
+           3. CONTRATO: O texto está dentro da div #contractBody.
+           4. VALORES: Estão na Cláusula 1.1 e no botão principal.
+        */
+    </script>
+</body>
+</html>
